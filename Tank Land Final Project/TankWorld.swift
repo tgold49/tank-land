@@ -20,13 +20,6 @@ class TankWorld {
         return gameBoard[x][y] = object
     }
     
-    func printGridOld() {
-        for x in 0 ... gameBoard.count - 1 {
-            for y in 0 ... gameBoard.count - 1 {
-                print(gameBoard[x][y])
-            }
-        }
-    }
     
     func printGrid() {
         let linesPerSquare = 4
@@ -36,8 +29,8 @@ class TankWorld {
         for y in 0 ... gameBoard.count * linesPerSquare {
             
             for x in 0 ..< gameBoard.count {
-                var row = (y - 1) / linesPerSquare
-                var col = x
+                let row = (y - 1) / linesPerSquare
+                let col = x
                 
                 let currentObject: GameObject?
                 if row >= 0 && col < gameBoard.count {
